@@ -5,11 +5,11 @@ namespace App\Controllers;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\RESTful\ResourceController;
 
-class Matkul extends ResourceController
+class Pasien extends ResourceController
 {
     use ResponseTrait;
 
-    protected $modelName = 'App\Models\matkulModel';
+    protected $modelName = 'App\Models\PasienModel';
     protected $format    = 'json';
 
     public function index()
@@ -32,13 +32,14 @@ class Matkul extends ResourceController
     public function create()
     {
         $data = $this->request->getPost();
+        // var_dump($data);die;
 
         if (empty($data)) {
             return $this->fail("Data yang diinput Kosong");
         }
 
         $save = $this->model->save($data);
-
+        // var_dump($save);die;
         if(!$save){
             return $this->fail($this->model->errors());
         }

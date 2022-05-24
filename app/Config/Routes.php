@@ -33,7 +33,10 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->resource('students');
-$routes->resource('matkul');
+$routes->resource('reservasi');
+$routes->resource('pasien');
+$routes->resource('obat');
+$routes->resource('dokter');
 
 /*
  * --------------------------------------------------------------------

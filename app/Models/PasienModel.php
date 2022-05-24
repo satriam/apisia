@@ -4,27 +4,29 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class matkulModel extends Model{
+class PasienModel extends Model{
 
-    protected $table = 'tbl_matakuliah';
+    protected $table = 'pasien';
     protected $primaryKey = 'id';
 
     protected $allowedFields = [
-        'nama_mata_kuliah',
+        'pasien',
         'status',
+        
     ];
 
     protected $validationRules = [
-        'nama_mata_kuliah' => 'required',
+        'pasien' => 'required',
         'status'=> 'required',
+       
     ];
 
     protected $validationMessages = [
-        'nama_mata_kuliah' =>[
-            'required' => 'Mata kuliah tidak boleh kosong'
+        'pasien' =>[
+            'required' => 'pasien tidak boleh kosong'
         ],
         'status' =>[
             'required' => 'status tidak boleh kosong'
-        ],        
+        ]       
     ];
 }
